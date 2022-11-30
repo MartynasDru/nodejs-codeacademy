@@ -4,13 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "paskaita1-start": "nodemon paskaita-1/app.js",
-    "paskaita2-start": "nodemon paskaita-2/app.js"
+    "start-1": "nodemon paskaita-1/app.js",
+    "start-2": "nodemon paskaita-2/app.js",
+    "start-3": "nodemon paskaita-3/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2"
   },
   "devDependencies": {
