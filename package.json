@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "paskaita1-start": "nodemon paskaita-1/app.js",
+    "paskaita2-start": "nodemon paskaita-2/app.js"
   },
   "keywords": [],
   "author": "",
