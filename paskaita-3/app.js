@@ -16,4 +16,10 @@ app.get('/api/tasks', (req, res) => {
     res.send(TASKS);
 });
 
+app.get('/api/tasks/:id', (req, res) => {
+    const id = Number(req.params.id);
+    const task = TASKS.find((task) => task.id === id);
+    res.send(task);
+});
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
