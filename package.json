@@ -6,7 +6,8 @@
   "scripts": {
     "start-1": "nodemon paskaita-1/app.js",
     "start-2": "nodemon paskaita-2/app.js",
-    "start-3": "nodemon paskaita-3/app.js"
+    "start-3": "nodemon paskaita-3/app.js",
+    "start-4": "nodemon paskaita-4/app.js"
   },
   "keywords": [],
   "author": "",
