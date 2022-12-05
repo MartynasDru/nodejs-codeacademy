@@ -54,8 +54,21 @@ fetch(TASKS_ENDPOINT)
                 });
             });
 
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+
+            deleteButton.addEventListener('click', () => {
+                fetch(`http://localhost:3000/api/tasks/${task.id}`, {
+                    method: 'DELETE'
+                }).then((res) => res.json())
+                .then((tasks) => {
+                    window.location.reload();
+                });
+            });
+
             card.appendChild(title);
             card.appendChild(completeButton);
+            card.appendChild(deleteButton);
 
             tasksContainer.appendChild(card);
         });

@@ -49,4 +49,12 @@ app.put('/api/tasks/:id', (req, res) => {
     res.send(TASKS);
 });
 
+app.delete('/api/tasks/:id', (req, res) => {
+    const id = Number(req.params.id);
+
+    const updatedTasks = TASKS.filter((task) => task.id !== id);
+    TASKS = [...updatedTasks];
+    res.send(TASKS);
+});
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
