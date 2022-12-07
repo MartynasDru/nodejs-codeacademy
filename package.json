@@ -9,7 +9,8 @@
     "start-3": "nodemon paskaita-3/app.js",
     "start-4": "nodemon paskaita-4/app.js",
     "start-5-dev": "NODE_ENV=dev nodemon paskaita-5/app.js",
-    "start-5-prod": "NODE_ENV=prod nodemon paskaita-5/app.js"
+    "start-5-prod": "NODE_ENV=prod nodemon paskaita-5/app.js",
+    "start-7": "nodemon paskaita-7/app.js"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +18,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
