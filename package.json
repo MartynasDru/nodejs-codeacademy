@@ -10,7 +10,8 @@
     "start-4": "nodemon paskaita-4/app.js",
     "start-5-dev": "NODE_ENV=dev nodemon paskaita-5/app.js",
     "start-5-prod": "NODE_ENV=prod nodemon paskaita-5/app.js",
-    "start-7": "nodemon paskaita-7/app.js"
+    "start-7": "nodemon paskaita-7/app.js",
+    "start-8": "nodemon paskaita-8/app.js"
   },
   "keywords": [],
   "author": "",
