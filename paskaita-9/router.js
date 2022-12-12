@@ -75,10 +75,18 @@ router.post('/users', async (req, res) => {
 });
 
 router.post('/adverts', async (req, res) => {
-    const { brand, model, price } = req.body;
-    await advertModel.create({ brand, model, price });
+    const { brand, model, price, user_id } = req.body;
+    await advertModel.create({ brand, model, price, user_id });
     const adverts = await advertModel.find();
     res.send(adverts);
 });
+
+router.patch('/adverts/:id', async (req, res) => {
+    const { id } = req.params;
+    // const { brand, model, price, user_id } = req.body;
+    await advertModel.updateOne({ _id: id }, req.body);
+    const adverts = await advertModel.find();
+    res.send(adverts);
+})
 
 module.exports = router;
