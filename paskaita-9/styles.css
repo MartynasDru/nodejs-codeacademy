@@ -3,3 +3,9 @@
     margin-top: 20px;
     padding: 20px;
 }
+
+.delete-button {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+}

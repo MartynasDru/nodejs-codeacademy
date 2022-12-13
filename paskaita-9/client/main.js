@@ -44,9 +44,21 @@ fetch(BASE_URL + '/adverts')
             const advertPrice = document.createElement('p');
             advertPrice.textContent = advert.price;
 
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'DELETE';
+            deleteButton.classList.add('delete-button');
+
+            deleteButton.addEventListener('click', () => {
+                fetch(BASE_URL + '/adverts/' + advert._id, {
+                    method: 'DELETE'
+                })
+                .then(() => window.location.reload());
+            });
+
             advertCard.appendChild(advertBrand);
             advertCard.appendChild(advertModel);
             advertCard.appendChild(advertPrice);
+            advertCard.appendChild(deleteButton);
 
             advertsOutput.appendChild(advertCard);
         });
