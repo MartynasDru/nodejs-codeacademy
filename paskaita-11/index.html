@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <form id="form">
+            <input id="brand" placeholder="Brand" required />
+            <input id="model" placeholder="Model" required />
+            <input type="number" id="price" placeholder="Price" required />
+
+            <button>Pridėti skelbimą</button>
+        </form>
+
+        <form class="hidden" id="edit-form">
+            <input id="brand" placeholder="Brand" required />
+            <input id="model" placeholder="Model" required />
+            <input type="number" id="price" placeholder="Price" required />
+
+            <button>Atnaujinti skelbimą</button>
+        </form>
+
+        <div id="adverts"></div>
+
+        <script src="./client/main.js"></script>
+    </body>
+</html>

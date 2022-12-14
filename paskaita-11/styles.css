@@ -1,0 +1,22 @@
+.advert-card {
+    border: 1px solid black;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.delete-button {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+}
+
+.edit-button {
+    background-color: white;
+    border: 1px solid blue;
+    color: blue;
+    /* margin-left: 10px; */
+}
+
+.hidden {
+    display: none;
+}
