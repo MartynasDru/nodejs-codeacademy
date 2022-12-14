@@ -4,9 +4,31 @@ const brandInput = document.getElementById('brand');
 const modelInput = document.getElementById('model');
 const priceInput = document.getElementById('price');
 const advertsOutput = document.getElementById('adverts');
+const editFormOutput = document.getElementById('edit-form-output');
+const editBrandInput = document.getElementById('edit-brand-input');
+const editModelInput = document.getElementById('edit-model-input');
+const editPriceInput = document.getElementById('edit-price-input');
 
 const USER_ID = '639760429f7ee04711be213c';
 const BASE_URL = 'http://localhost:3000';
+
+let editAdvertId;
+
+editForm.addEventListener('submit', () => {
+    const updatedAdvert = {
+        brand: editBrandInput.value,
+        model: editModelInput.value,
+        price: editPriceInput.value
+    };
+
+    fetch(BASE_URL + '/adverts/' + editAdvertId, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedAdvert)
+    });
+});
 
 form.addEventListener('submit', (event) => {
     const brand = brandInput.value;
@@ -66,6 +88,37 @@ function createAdvertCard(advert) {
 
     editButton.addEventListener('click', () => {
         editForm.classList.remove('hidden');
+        
+        editBrandInput.value = advert.brand;
+        editModelInput.value = advert.model;
+        editPriceInput.value = advert.price;
+
+        editAdvertId = advert._id;
+        
+        // const editForm = document.createElement('form');
+        
+        // const brandInput = createElement(
+        //     'input', 
+        //     [['id', 'brand-input'], ['placeholder', 'Brand'], ['required', true]]
+        // );
+        // const modelInput = createElement(
+        //     'input', 
+        //     [['id', 'model-input'], ['placeholder', 'Model'], ['required', true]]
+        // );
+        // const priceInput = createElement(
+        //     'input', 
+        //     [['id', 'price-input'], ['placeholder', 'Price'], ['required', true], ['type', 'number']]
+        // );
+
+        // const submitButton = document.createElement('button');
+        // submitButton.textContent = 'Atnaujinti skelbimą';
+
+        // editForm.appendChild(brandInput);
+        // editForm.appendChild(modelInput);
+        // editForm.appendChild(priceInput);
+        // editForm.appendChild(submitButton);
+
+        // editFormOutput.appendChild(editForm);
     });
 
     advertCard.appendChild(advertBrand);
@@ -75,4 +128,16 @@ function createAdvertCard(advert) {
     advertCard.appendChild(editButton);
 
     advertsOutput.appendChild(advertCard);
+}
+
+function createElement(name, attributes) {
+    const element = document.createElement(name);
+    // [['id', 'price-input'], ['placeholder', 'Price'], ['required', true]];
+    attributes.forEach((attr) => {
+        element.setAttribute(attr[0], attr[1]);
+    });
+    // input.setAttribute('id', id);
+    // input.setAttribute('placeholder', placeholder);
+    // input.setAttribute('required', required);
+    return input;
 }
