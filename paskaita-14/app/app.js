@@ -1,5 +1,5 @@
 const cors = require('cors');
-const mysql = require('mysql2/promise');
+const mysql = require('mysql2');
 
 const express = require('express');
 const app = express();
@@ -15,13 +15,24 @@ const mysqlConfig = {
   port: 3306
 };
 
-app.get('/students', async (req, res) => {
-  const connection = await mysql.createConnection(mysqlConfig);
+const connection = mysql.createConnection(mysqlConfig);
 
-  const result = await connection.execute('SELECT * FROM students');
-  const students = result[0];
+app.get('/students', (req, res) => {
+  connection.execute('SELECT * FROM students', (err, students) => {
+    res.send(students);
+  });
+});
 
-  res.send(students);
+app.get('/assignments', async (req, res) => {
+  connection.execute('SELECT * FROM assignments', (err, assignments) => {
+    res.send(assignments);
+  });
+});
+
+app.get('/assignments/done', async (req, res) => {
+  connection.execute('SELECT * FROM assignments WHERE done=1', (err, doneAssignments) => {
+    res.send(doneAssignments);
+  });
 });
 
 const PORT = 3000;
