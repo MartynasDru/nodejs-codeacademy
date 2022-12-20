@@ -14,7 +14,8 @@
     "start-8": "nodemon paskaita-8/app.js",
     "start-9-10": "nodemon paskaita-9-10/app/app.js",
     "start-11": "nodemon paskaita-11/app/app.js",
-    "start-12": "nodemon paskaita-12/app/app.js"
+    "start-12": "nodemon paskaita-12/app/app.js",
+    "start-14": "nodemon paskaita-14/app/app.js"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +24,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.8.0"
+    "mongoose": "^6.8.0",
+    "mysql2": "^2.3.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
