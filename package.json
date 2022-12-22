@@ -16,7 +16,8 @@
     "start-11": "nodemon paskaita-11/app/app.js",
     "start-12": "nodemon paskaita-12/app/app.js",
     "start-14": "nodemon paskaita-14/app/app.js",
-    "start-15": "nodemon paskaita-15/app/app.js"
+    "start-15": "nodemon paskaita-15/app/app.js",
+    "start-16": "nodemon paskaita-16/app/app.js"
   },
   "keywords": [],
   "author": "",
